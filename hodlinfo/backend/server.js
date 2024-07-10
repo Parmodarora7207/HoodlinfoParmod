@@ -3,12 +3,13 @@ const axios = require("axios");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 require("dotenv").config();
-
+const cors = require("cors");
 const Ticker = require("./models/Ticker.js");
 const tickerRoutes = require("./routes/ticker.js");
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 const PORT = process.env.PORT || 4000;
 

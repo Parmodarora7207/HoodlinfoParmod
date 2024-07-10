@@ -434,7 +434,9 @@
   <script>
     async function fetchTickers() {
       try {
-        const response = await fetch('http://localhost:3000/fetch-and-store');
+        const response = await fetch('http://localhost:4000/fetch-and-store')
+        {
+          mode: 'no-cors'
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -461,6 +463,7 @@
           `;
           tableBody.appendChild(row);
         });
+      }
       } catch (error) {
         console.error('Error fetching tickers:', error);
       }
